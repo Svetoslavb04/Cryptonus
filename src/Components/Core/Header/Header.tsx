@@ -14,6 +14,33 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
 
   const toggleMobileMenu = () => setIsMobileMenuShown(isMobileMenuShown => !isMobileMenuShown);
 
+  const toggleThemeHandler = () => {
+
+    setTheme((theme) => {
+
+      let newTheme: string = '';
+
+      if (theme === themes.dark) {
+        newTheme = themes.light;
+
+      } else if (theme === themes.light) {
+        newTheme = themes.dark
+      }
+
+      const favicoLinks = document.querySelectorAll('.favico');
+
+      favicoLinks.forEach(favicoLink => {
+
+        let href = favicoLink.getAttribute('href')!;
+
+        favicoLink.setAttribute('href', href.replace(theme, newTheme));
+      })
+
+      return newTheme;
+    })
+
+  }
+
   return (
     <div className='header text-onPrimary dark:text-onPrimaryDark flex items-center h-14 border-b border-solid dark:border-primary-light/25 border-onPrimary/25 border-b-1 relative'>
       <div className="logo font-bold h-full flex items-center grow-[2] shrink basis-0 select-none">
@@ -54,16 +81,12 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
       </ul>
       <ul className='flex gap-3 h-full justify-end items-center grow-[2] shrink basis-0 select-none'>
         <li
-          onClick={setTheme.bind(null, (theme: string) =>
-            theme === themes.dark
-              ? themes.light
-              : themes.dark
-          )}
+          onClick={toggleThemeHandler}
           className='transition-colors duration-300 cursor-pointer py-[2px]' data-testid="theme-toggler"
         >
           {
             theme === themes.dark
-              ? <Sun size={20} className='hover:text-yellow-300'/>
+              ? <Sun size={20} className='hover:text-yellow-300' />
               : <Moon size={20} className='hover:text-secondary' data-testid="moon-svg" />
           }
         </li>
@@ -71,7 +94,7 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
           onClick={toggleMobileMenu}
           className='lg:hidden cursor-pointer hover:text-secondary transition-colors duration-300'
         >
-          <Menu data-testid="menu-svg"/>
+          <Menu data-testid="menu-svg" />
         </li>
         <li className='pr-4'>
           <button className='px-2 border-2 rounded-xl hover:border-2 hover:text-secondary hover:border-secondary'>
