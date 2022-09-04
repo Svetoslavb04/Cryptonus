@@ -3,3 +3,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        --primary-light: #ffffff;
+        --primary: #fafafa;
+        --primary-dark: #c7c7c7;
+        --dark-primary-light: #484848;
+        --dark-primary-light: #181818;
+        --dark-primary-dark: #000000;
+        --secondary-light: #82f7ff;
+        --secondary: #40c4ff;
+        --secondary-dark: #0094cc;
+        --on-primary: #000000;
+        --on-secondary: #000000;
+        --on-primary-dark: #ffffff;
+        --on-secondary-dark: #000000;
+    }
+}
