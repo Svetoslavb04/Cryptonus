@@ -7,7 +7,7 @@
 }
 
 .header .logo {
-    text-shadow: -3px 0px 3px var(--secondary);
+    text-shadow: -2px 0px 2px var(--secondary);
 }
 
 @media (max-width: 350px) {
