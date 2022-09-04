@@ -1,0 +1,17 @@
+.scale-1-1 {
+    transform: scale(1, 1);
+}
+
+.scale-1-0 {
+    transform: scale(1, 0);
+}
+
+.header .logo {
+    text-shadow: -3px 0px 3px var(--secondary);
+}
+
+@media (max-width: 350px) {
+    .header .logo h1 {
+        font-size: 1.7rem;
+    }
+}
