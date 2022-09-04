@@ -9,11 +9,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#FFD369',
-        seconday: '#EEEEEE',
-        background: '#040303',
-        surface: '#191919',
-        onsurface: colors.white
+        primary: {
+          light: '#ffffff',
+          DEFAULT: '#fafafa',
+          dark: '#c7c7c7'
+        },
+        primaryDark: {
+          light: '#484848',
+          DEFAULT: '#181818',
+          dark: '#000000'
+        },
+        secondary: {
+          light: '#82f7ff',
+          DEFAULT: '#40c4ff',
+          dark: '#0094cc'
+        },
+        onPrimary: '#000000',
+        onSecondary: '#000000',
+        onPrimaryDark: '#ffffff',
+        onSecondaryDark: '#000000',
+      },
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif']
       }
     },
   },
