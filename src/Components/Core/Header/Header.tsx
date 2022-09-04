@@ -54,17 +54,24 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
       </ul>
       <ul className='flex gap-3 h-full justify-end items-center grow-[2] shrink basis-0 select-none'>
         <li
-          onClick={setTheme.bind(null, (theme: string) => theme === themes.dark ? themes.light : themes.dark)}
-          className='transition-colors duration-300 cursor-pointer py-[2px]'
+          onClick={setTheme.bind(null, (theme: string) =>
+            theme === themes.dark
+              ? themes.light
+              : themes.dark
+          )}
+          className='transition-colors duration-300 cursor-pointer py-[2px]' data-testid="theme-toggler"
         >
           {
             theme === themes.dark
-              ? <Sun size={20} className='hover:text-yellow-300' />
-              : <Moon size={20} className='hover:text-secondary' />
+              ? <Sun size={20} className='hover:text-yellow-300'/>
+              : <Moon size={20} className='hover:text-secondary' data-testid="moon-svg" />
           }
         </li>
-        <li onClick={toggleMobileMenu} className='lg:hidden cursor-pointer hover:text-secondary transition-colors duration-300'>
-          <Menu />
+        <li
+          onClick={toggleMobileMenu}
+          className='lg:hidden cursor-pointer hover:text-secondary transition-colors duration-300'
+        >
+          <Menu data-testid="menu-svg"/>
         </li>
         <li className='pr-4'>
           <button className='px-2 border-2 rounded-xl hover:border-2 hover:text-secondary hover:border-secondary'>
