@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      transitionProperty: {
+        'height': 'height',
+      },
       colors: {
         primary: {
           light: '#ffffff',
@@ -17,7 +20,7 @@ module.exports = {
         primaryDark: {
           light: '#484848',
           DEFAULT: '#181818',
-          dark: '#000000'
+          dark: '#111111'
         },
         secondary: {
           light: '#82f7ff',

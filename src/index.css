@@ -1,5 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap'); */
+
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"),
+        url("./fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Orbitron";
+    src: local("Orbitron"),
+        url("./fonts/Orbitron/Orbitron-VariableFont_wght.ttf") format("truetype");
+    font-weight: bold;
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        --primary-light: #ffffff;
+        --primary: #fafafa;
+        --primary-dark: #c7c7c7;
+        --dark-primary-light: #484848;
+        --dark-primary-light: #181818;
+        --dark-primary-dark: #000000;
+        --secondary-light: #82f7ff;
+        --secondary: #40c4ff;
+        --secondary-dark: #0094cc;
+        --on-primary: #000000;
+        --on-secondary: #000000;
+        --on-primary-dark: #ffffff;
+        --on-secondary-dark: #000000;
+    }
+}

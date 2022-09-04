@@ -1,14 +1,17 @@
+import { useState } from 'react';
 import './App.css';
+import { themes } from './constants/themes';
+import Content from './Core/Content/Content';
 
-function App() {
+const App: React.FC = () => {
+
+  const [theme, setTheme] = useState<string>(themes.dark);
+
   return (
     <>
-      <div className='w-2/4 h-40 bg-surface dark'>
-        <h1 className="text-onsurface text-3xl font-bold underline">
-          Hello world!
-        </h1>
+      <div id='cryptonus' className={`cryptonus ${theme}`}>
+        <Content theme={theme} setTheme={setTheme} />
       </div>
-
     </>
   );
 }
