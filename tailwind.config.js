@@ -9,13 +9,17 @@ module.exports = {
   theme: {
     screens: {
       'xs': '380px',
-      ...defaultTheme.screens
+      ...defaultTheme.screens,
     },
     extend: {
       transitionProperty: {
         'height': 'height',
       },
-
+      screens: {
+        '3xl': '1760px',
+        '4xl': '1920px',
+        '5xl': '2100px',
+      },
       colors: {
         primary: {
           light: '#ffffff',
