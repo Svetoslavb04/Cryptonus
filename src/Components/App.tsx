@@ -9,7 +9,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <div id='cryptonus' className={`cryptonus ${theme}`}>
+      <div id='cryptonus' className={`cryptonus overflow-hidden ${theme}`}>
         <Content theme={theme} setTheme={setTheme} />
       </div>
     </>
