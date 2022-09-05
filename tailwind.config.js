@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   darkMode: 'class',
@@ -7,10 +7,15 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      'xs': '380px',
+      ...defaultTheme.screens
+    },
     extend: {
       transitionProperty: {
         'height': 'height',
       },
+
       colors: {
         primary: {
           light: '#ffffff',

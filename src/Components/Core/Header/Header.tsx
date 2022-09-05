@@ -10,7 +10,7 @@ type Props = {
 
 const Header: React.FC<Props> = ({ theme, setTheme }) => {
 
-  const [isMobileMenuShown, setIsMobileMenuShown] = useState<boolean>(true);
+  const [isMobileMenuShown, setIsMobileMenuShown] = useState<boolean>(false);
 
   const toggleMobileMenu = () => setIsMobileMenuShown(isMobileMenuShown => !isMobileMenuShown);
 
@@ -21,10 +21,13 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
       let newTheme: string = '';
 
       if (theme === themes.dark) {
+
         newTheme = themes.light;
 
       } else if (theme === themes.light) {
-        newTheme = themes.dark
+
+        newTheme = themes.dark;
+
       }
 
       const favicoLinks = document.querySelectorAll('.favico');
@@ -42,7 +45,7 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
   }
 
   return (
-    <div className='header text-onPrimary dark:text-onPrimaryDark flex items-center h-14 border-b border-solid dark:border-primary-light/25 border-onPrimary/25 border-b-1 relative'>
+    <div className='header text-onPrimary dark:text-onPrimaryDark flex flex-wrap items-center py-2 xs:py-0 xs:h-14 border-b border-solid dark:border-primary-light/25 border-onPrimary/25 border-b-1 relative'>
       <div className="logo font-bold h-full flex items-center grow-[2] shrink basis-0 select-none">
         <h1 className="text-3xl pl-7 pb-[3px] font-['Orbitron'] font-thin">Cryptonus</h1>
       </div>
@@ -54,7 +57,7 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
         <li className='font-semibold border-b-2 border-transparent hover:border-b-2 hover:border-secondary h-full flex items-center pt-1'>Blog</li>
       </ul>
       <ul
-        className={`nav-mobile flex lg:hidden flex-col ${isMobileMenuShown ? 'scale-1-0' : 'scale-1-1'} 
+        className={`nav-mobile flex lg:hidden flex-col ${!isMobileMenuShown ? 'scale-1-0' : 'scale-1-1'} 
           absolute top-full w-full bg-primary dark:bg-primaryDark-dark origin-top transition-all duration-300 
           px-8 py-3 border-b border-onPrimary/25 dark:border-onPrimaryDark/25`}
       >
@@ -82,7 +85,7 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
       <ul className='flex gap-3 h-full justify-end items-center grow-[2] shrink basis-0 select-none'>
         <li
           onClick={toggleThemeHandler}
-          className='transition-colors duration-300 cursor-pointer py-[2px]' data-testid="theme-toggler"
+          className='transition-colors duration-300 cursor-pointer pl-4 py-[2px]' data-testid="theme-toggler"
         >
           {
             theme === themes.dark
@@ -92,7 +95,10 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
         </li>
         <li
           onClick={toggleMobileMenu}
-          className='lg:hidden cursor-pointer hover:text-secondary transition-colors duration-300'
+          className={
+            `lg:hidden cursor-pointer hover:text-secondary transition-colors duration-300 
+            ${isMobileMenuShown ? 'text-secondary' : ''}`
+          }
         >
           <Menu data-testid="menu-svg" />
         </li>
