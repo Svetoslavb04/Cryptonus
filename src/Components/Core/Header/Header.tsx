@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import "./Header.css"
 import { Sun, Menu, Moon } from 'react-feather';
-import { themes } from '../../constants/themes';
+import { themes } from '../../../constants/themes';
 
 type Props = {
   theme: string,

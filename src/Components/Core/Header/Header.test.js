@@ -17,7 +17,12 @@ test('changes theme correctly', async () => {
 
     fireEvent.click(screen.getByTestId('theme-toggler'));
 
-    expect(screen.getByTestId('moon-svg')).toBeInTheDocument()
+    const moonSvg = screen.getByTestId('moon-svg');
+    expect(moonSvg).toBeInTheDocument();
+
+    fireEvent.click(screen.getByTestId('theme-toggler'));
+
+    expect(moonSvg).not.toBeInTheDocument();
 
 })
 
