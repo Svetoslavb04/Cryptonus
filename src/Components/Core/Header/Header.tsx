@@ -103,7 +103,7 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
           <Menu data-testid="menu-svg" />
         </li>
         <li className='pr-4'>
-          <button className='px-2 border-2 rounded-xl hover:border-2 hover:text-secondary hover:border-secondary'>
+          <button className='px-2 border-2 border-onPrimary dark:border-onPrimaryDark hover:border-secondary dark:hover:border-secondary rounded-xl hover:border-2 hover:text-secondary'>
             Wallet
           </button>
         </li>
