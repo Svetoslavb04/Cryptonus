@@ -1,0 +1,15 @@
+.start-trading-button:hover {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em rgba(0, 0 ,0 , 0);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--secondary);
+    }
+}
+
+.home-page .show-on-scroll {
+    transform: translateY(0);
+    opacity: 1;
+}
