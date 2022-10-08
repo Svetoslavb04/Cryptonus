@@ -6,7 +6,7 @@ function CurrenciesSection() {
 
     const currenciesSection = useRef<HTMLDivElement>(null);
 
-    useScrollTransition(currenciesSection, 50);
+    useScrollTransition(currenciesSection, 80);
 
     return (
         <section ref={currenciesSection} className='pt-20 relative on-scroll-transition'>
