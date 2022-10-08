@@ -70,3 +70,41 @@ test('nav menu elements matches mobile menu elements', () => {
     expect(navNonMobilelistItemsCount).toEqual(navMobileListItemsCount);
 
 })
+
+test('correct moon and sun size', () => {
+
+    window.innerWidth = 2000;
+    window.dispatchEvent(new Event('resize'));
+
+    const { rerender } = render(<Header theme='light' />);
+
+    let moonSvg = screen.getByTestId('moon-svg');
+    let moonWidth = Number(moonSvg.getAttribute('width'));
+
+    expect(moonWidth).toBe(26);
+
+    rerender(<Header theme='dark' />);
+
+    let sunSvg = screen.getByTestId('sun-svg');
+    let sunWidth = Number(sunSvg.getAttribute('width'));
+
+    expect(sunWidth).toBe(26);
+
+    window.innerWidth = 400;
+    window.dispatchEvent(new Event('resize'));
+
+    rerender(<Header theme='light' />);
+
+    moonSvg = screen.getByTestId('moon-svg');
+    moonWidth = Number(moonSvg.getAttribute('width'));
+
+    expect(moonWidth).toBe(20);
+
+    rerender(<Header theme='dark' />);
+
+    sunSvg = screen.getByTestId('sun-svg');
+    sunWidth = Number(sunSvg.getAttribute('width'));
+
+    expect(sunWidth).toBe(20);
+    
+});
