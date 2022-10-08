@@ -1,0 +1,13 @@
+.on-scroll-transition {
+    transition: all ease 600ms;
+}
+
+.show-on-scroll {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hide-on-scroll {
+    transform: translateY(150px);
+    opacity: 1;
+}

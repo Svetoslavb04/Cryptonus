@@ -17,7 +17,12 @@ test('changes theme correctly', async () => {
 
     fireEvent.click(screen.getByTestId('theme-toggler'));
 
-    expect(screen.getByTestId('moon-svg')).toBeInTheDocument()
+    const moonSvg = screen.getByTestId('moon-svg');
+    expect(moonSvg).toBeInTheDocument();
+
+    fireEvent.click(screen.getByTestId('theme-toggler'));
+
+    expect(moonSvg).not.toBeInTheDocument();
 
 })
 
@@ -65,3 +70,31 @@ test('nav menu elements matches mobile menu elements', () => {
     expect(navNonMobilelistItemsCount).toEqual(navMobileListItemsCount);
 
 })
+
+test('correct moon and sun size', () => {
+
+    window.innerWidth = 2000;
+    window.dispatchEvent(new Event('resize'));
+
+    const { rerender } = render(<Header theme='light' />);
+
+    let moonSvg = screen.getByTestId('moon-svg');
+    let moonWidth = Number(moonSvg.getAttribute('width'));
+
+    expect(moonWidth).toBe(24);
+
+    rerender(<Header theme='dark' />);
+
+    let sunSvg = screen.getByTestId('sun-svg');
+    let sunWidth = Number(sunSvg.getAttribute('width'));
+
+    expect(sunWidth).toBe(24);
+
+    window.innerWidth = 400;
+    window.dispatchEvent(new Event('resize'));
+
+    rerender(<Header theme='light' />);
+
+    moonSvg = screen.getByTestId('moon-svg');
+    moonWidth = Number(moonSvg.getAttribute('width'));
+});
