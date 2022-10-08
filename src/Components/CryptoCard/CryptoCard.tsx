@@ -10,7 +10,7 @@ type Props = {
 const CryptoCard: React.FC<Props> = ({ className, iconName, fullName, nameFrom, nameTo, price }) => {
     return (
         <div
-            className={`bg-onPrimaryDark dark:bg-onPrimary min-w-[380px] max-w-[380px] py-10 px-6 sm:px-10 rounded-full 
+            className={`bg-primary dark:bg-primaryDark/90 min-w-[380px] max-w-[380px] py-10 px-6 sm:px-10 rounded-full 
             hover:drop-shadow-2xl transition-all duration-300 overflow-hidden ${className}`}
         >
             <div className="flex">

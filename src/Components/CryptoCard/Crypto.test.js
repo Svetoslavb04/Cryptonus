@@ -3,7 +3,7 @@ import CryptoCard from "./CryptoCard.tsx"
 
 test('renders correct logo when iconName is provided', () => {
 
-    render(<CryptoCard iconName='btc' fullName="Bitocoin" nameFrom="BTC" nameTo="USD" price={30000} />);
+    render(<CryptoCard iconName='btc' fullName="Bitcoin" nameFrom="BTC" nameTo="USD" price={30000} />);
 
     const imgSrc = screen.getByRole('img').getAttribute('src');
 
@@ -12,7 +12,7 @@ test('renders correct logo when iconName is provided', () => {
 
 test('renders correct logo when iconName is NOT provided', () => {
 
-    render(<CryptoCard fullName="Bitocoin" nameFrom="BTC" nameTo="USD" price={30000} />);
+    render(<CryptoCard fullName="Bitcoin" nameFrom="BTC" nameTo="USD" price={30000} />);
 
     const imgSrc = screen.getByRole('img').getAttribute('src');
 
