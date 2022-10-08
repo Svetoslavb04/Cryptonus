@@ -8,19 +8,3 @@
         box-shadow: 0 0 0 0 var(--secondary);
     }
 }
-
-
-.home-page .on-scroll-transition {
-    transition: all ease 800ms;
-    /* transition-duration: 800ms; */
-}
-
-.home-page .show-on-scroll {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.home-page .hide-on-scroll {
-    transform: translateY(150px);
-    opacity: 1;
-}
