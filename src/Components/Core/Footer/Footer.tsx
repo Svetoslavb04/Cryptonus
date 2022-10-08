@@ -4,7 +4,7 @@ const Footer: React.FC = () => {
       <div>
         ©2022 Cryptonus All Rights Reserved. Privacy Terms </div>
       <a href="https://pikbest.com//png-images/qiantu-financial-currency-globe-interconnection-bitcoin-character-mining-flat-gold-coins_2531528.html">
-        Free png images from pikbest.com</a>
+        Free images: pikbest.com</a>
       <div>
         <a href="https://iconscout.com/illustrations/cryptocurrency" target="_blank" rel="noreferrer">Cryptocurrency Illustration by </a>
         <a href="https://iconscout.com/contributors/delesign">Delesign Graphics on </a>

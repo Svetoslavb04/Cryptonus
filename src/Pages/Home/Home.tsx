@@ -1,45 +1,49 @@
 import './Home.css'
-import { useEffect, useRef, useState } from 'react'
+import { RefObject, useCallback, useEffect, useRef } from 'react'
 import CryptoCard from '../../Components/CryptoCard/CryptoCard';
-
-interface CryptoData {
-  [key: string]: {
-    price: number
-  }
-}
+import { ChevronRight } from 'react-feather';
 
 const Home: React.FC = () => {
 
   const currenciesSection = useRef<HTMLElement>(null);
-  const [cryptoData, setCryptoData] = useState<CryptoData>({});
+  const whatIsCryptonusRef = useRef<HTMLDivElement>(null);
+
+  const windowScrollHandler = useCallback(() => {
+
+    showOnScrollElement(currenciesSection, 60);
+    showOnScrollElement(whatIsCryptonusRef, 70);
+
+  }, [currenciesSection, whatIsCryptonusRef]);
 
   useEffect(() => {
-    window.addEventListener('scroll', (e) => {
 
-      if (currenciesSection.current) {
-        showCurrenciesSection();
-      }
+    window.addEventListener('scroll', windowScrollHandler);
 
-    });
+    return () => {
+
+      window.removeEventListener('scroll', windowScrollHandler);
+
+    }
+
+  }, [windowScrollHandler]);
 
 
-  }, []);
-
-
-
-  function showCurrenciesSection() {
+  function showOnScrollElement(elementRef: RefObject<HTMLElement>, elementVisibleAfterPixels: number) {
 
     const windowHeight = window.innerHeight;
 
-    const elementTop = currenciesSection.current?.getBoundingClientRect().top;
+    const elementTop = elementRef.current?.getBoundingClientRect().top;
 
-    const elementVisible = 40;
+    if ((elementTop || Number.MAX_SAFE_INTEGER) < windowHeight - elementVisibleAfterPixels) {
 
-    if ((elementTop || Number.MAX_SAFE_INTEGER) < windowHeight - elementVisible) {
+      elementRef.current?.classList.add("show-on-scroll");
+      elementRef.current?.classList.remove("hide-on-scroll");
 
-      currenciesSection.current?.classList.add("show-on-scroll");
     } else {
-      currenciesSection.current?.classList.remove("show-on-scroll");
+
+      elementRef.current?.classList.remove("show-on-scroll");
+      elementRef.current?.classList.add("hide-on-scroll");
+
     }
 
   }
@@ -55,15 +59,15 @@ const Home: React.FC = () => {
           </h2>
         </div>
         <div className="start-trading-wrapper">
-          <button className='start-trading-button bg-secondary py-3 px-8 rounded-full text-black'>Start trading</button>
+          <button className='start-trading-button bg-secondary py-3 px-8 rounded-full text-black xl:text-xl'>Start trading</button>
         </div>
         <div className="image-wrapper px-20 pt-16 w-full flex justify-center">
           <img src="assets/images/cryptocurrency2.png" alt="" className='w-full xl:w-[60%]' />
         </div>
       </section>
-      <section ref={currenciesSection} className='pt-20 relative translate-y-[150px] opacity-0 transition-all duration-[800ms] ease'>
+      <section ref={currenciesSection} className='pt-20 relative on-scroll-transition'>
         <div
-          className='sm:px-14 md:px-20 lg:px-20 py-12 lg:h-96 bg-secondary rounded-[5rem] lg:rounded-full 
+          className='sm:px-14 md:px-20 lg:px-20 py-12 lg:h-96 bg-secondary rounded-[2rem] lg:rounded-full 
           flex items-center gap-6 justify-center flex-col lg:flex-row'
         >
           <CryptoCard
@@ -71,7 +75,7 @@ const Home: React.FC = () => {
             fullName='Bitcoin'
             nameFrom='BTC'
             nameTo='USD'
-            price={32900.49}
+            price={3213.315123}
             iconName='btc'
           />
           <CryptoCard
@@ -79,7 +83,7 @@ const Home: React.FC = () => {
             fullName='Bitcoin'
             nameFrom='BTC'
             nameTo='USD'
-            price={3290033333333333333333.49}
+            price={123323.49}
             iconName='eth'
           />
           <CryptoCard
@@ -87,7 +91,7 @@ const Home: React.FC = () => {
             fullName='Bitcoin'
             nameFrom='BTC'
             nameTo='USD'
-            price={3290033333333333333333.49}
+            price={3123123.49}
             iconName='btc'
           />
           <CryptoCard
@@ -95,9 +99,31 @@ const Home: React.FC = () => {
             fullName='Bitcoin'
             nameFrom='BTC'
             nameTo='USD'
-            price={3290033333333333333333.49}
+            price={31231.49}
             iconName='btc'
           />
+        </div>
+      </section>
+      <section id='what-is-cryptonus' className='my-8 mx-2 sm:mx-6 md:mx-12 bg-primary-dark/10 dark:bg-primaryDark-dark rounded-xl md:py-4  xl:py-16 px-6'>
+        <div className='flex gap-16 flex-col xl:flex-row'>
+          <div className='basis-2/5'>
+            <img src="assets/images/crypto-home-globe.png" alt="" className='m-auto w-[70%] xl:w-fit xl:max-h-[650px]' />
+          </div>
+          <div ref={whatIsCryptonusRef} className='basis-3/5 flex flex-col on-scroll-transition'>
+            <h2 className='text-2xl xs:text-3xl sm:text-5xl md:text-6xl'>What is Cryptonus</h2>
+            <p className='xs:text-md sm:text-xl md:text-2xl opacity-85 my-6'>Receive the best trading experience with Cryptonus. Many features are available for you. Start now and receive a bonus!</p>
+            {
+              [
+                'Access real-time cryptocurrency prices',
+                'Buy & Sell the most popular cryptocurrencies',
+                'P2P trading available',
+                '24/7 Customer support'
+              ].map(text =>
+              (
+                <div key={text} className='flex items-center xs:text-xl  sm:text-2xl md:text-3xl my-4'><ChevronRight size={40} />{text}</div>
+              ))
+            }
+          </div>
         </div>
       </section>
     </div>
