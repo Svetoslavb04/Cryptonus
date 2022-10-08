@@ -3,8 +3,10 @@ import './Home.css';
 import { useRef } from 'react';
 import { useScrollTransition } from '../../hooks/useScrollTransition';
 
-import WhatIsCryptonus from '../../Components/WhatIsCryptonus/WhatIsCryptonus';
 import CurrenciesSection from '../../Components/CurrenciesSection/CurrenciesSection';
+
+import WhatIsCryptonus from './WhatIsCryptonus/WhatIsCryptonus';
+import HappyCustomers from './HappyCustomers/HappyCustomers';
 
 const Home: React.FC = () => {
 
@@ -31,6 +33,7 @@ const Home: React.FC = () => {
       </section>
       <CurrenciesSection />
       <WhatIsCryptonus />
+      <HappyCustomers volumeTraded={342131231231} supportedCountries={100} users={412332} />
     </div>
   )
 }
