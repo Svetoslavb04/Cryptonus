@@ -47,7 +47,7 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
   return (
     <div className='header text-onPrimary dark:text-onPrimaryDark flex flex-wrap items-center py-2 xs:py-0 xs:h-16 border-b border-solid dark:border-primary-light/25 border-onPrimary/25 border-b-1 relative'>
       <div className="logo font-bold h-full flex items-center grow-[2] shrink basis-0 select-none">
-        <h1 className="text-3xl pl-7 pb-[3px] font-['Orbitron'] font-thin">Cryptonus</h1>
+        <h1 className="text-3xl xl:text-4xl pl-7 pb-[3px] font-['Orbitron'] font-thin">Cryptonus</h1>
       </div>
       <ul className="nav text-xl gap-7 h-full lg:flex hidden grow shrink justify-center select-none">
         <li className='font-semibold border-b-2 border-transparent hover:border-b-2 hover:border-secondary h-full flex items-center pt-1'>Homepage</li>
