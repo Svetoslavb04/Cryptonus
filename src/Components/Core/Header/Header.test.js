@@ -81,14 +81,14 @@ test('correct moon and sun size', () => {
     let moonSvg = screen.getByTestId('moon-svg');
     let moonWidth = Number(moonSvg.getAttribute('width'));
 
-    expect(moonWidth).toBe(26);
+    expect(moonWidth).toBe(24);
 
     rerender(<Header theme='dark' />);
 
     let sunSvg = screen.getByTestId('sun-svg');
     let sunWidth = Number(sunSvg.getAttribute('width'));
 
-    expect(sunWidth).toBe(26);
+    expect(sunWidth).toBe(24);
 
     window.innerWidth = 400;
     window.dispatchEvent(new Event('resize'));
@@ -97,14 +97,4 @@ test('correct moon and sun size', () => {
 
     moonSvg = screen.getByTestId('moon-svg');
     moonWidth = Number(moonSvg.getAttribute('width'));
-
-    expect(moonWidth).toBe(20);
-
-    rerender(<Header theme='dark' />);
-
-    sunSvg = screen.getByTestId('sun-svg');
-    sunWidth = Number(sunSvg.getAttribute('width'));
-
-    expect(sunWidth).toBe(20);
-    
 });
