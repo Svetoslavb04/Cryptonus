@@ -1,15 +1,19 @@
-import { useRef } from 'react'
+import { FC, useRef } from 'react'
 import { useScrollTransition } from '../../hooks/useScrollTransition';
 import CryptoCard from '../CryptoCard/CryptoCard'
 
-function CurrenciesSection() {
+type Props = {
+    className?: string
+};
+
+const CurrenciesSection: FC<Props> = ({ className }) => {
 
     const currenciesSection = useRef<HTMLDivElement>(null);
 
     useScrollTransition(currenciesSection, 80);
 
     return (
-        <section ref={currenciesSection} className='pt-20 relative on-scroll-transition'>
+        <section ref={currenciesSection} className={`pt-20 relative on-scroll-transition ${className}`}>
             <div
                 className='sm:px-14 md:px-20 lg:px-20 py-12 lg:h-96 bg-secondary rounded-[2rem] lg:rounded-full 
           flex items-center gap-6 justify-center flex-col lg:flex-row'

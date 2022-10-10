@@ -32,8 +32,13 @@ const Home: React.FC = () => {
         </div>
       </section>
       <CurrenciesSection />
-      <WhatIsCryptonus />
-      <HappyCustomers volumeTraded={342131231231} supportedCountries={100} users={412332} />
+      <WhatIsCryptonus className='my-8 mx-2 sm:mx-6 md:mx-12 md:py-4 xl:py-16 px-6 bg-primary-dark/10 dark:bg-primaryDark-dark rounded-xl' />
+      <HappyCustomers
+        volumeTraded={342131231231}
+        supportedCountries={100}
+        users={412332}
+        className='my-8 mx-2 sm:mx-6 md:mx-12 py-10 lg:py-20 bg-secondary flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-28 rounded-xl'
+      />
     </div>
   )
 }

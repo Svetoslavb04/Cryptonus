@@ -5,11 +5,12 @@ type Props = {
     currencySymbol?: string,
     volumeTraded: number,
     supportedCountries?: number,
-    users?: number
+    users?: number,
+    className?: string
 }
 
 const HappyCustomers: FC<Props> =
-    ({ currencySymbol = '$', volumeTraded, supportedCountries = 100, users = 100000 }) => {
+    ({ currencySymbol = '$', volumeTraded, supportedCountries = 100, users = 100000, className }) => {
 
         const sectionRef = useRef<HTMLElement>(null)
         useScrollTransition(sectionRef, 80);
@@ -36,7 +37,7 @@ const HappyCustomers: FC<Props> =
             <section
                 ref={sectionRef}
                 id='happy-customers-section'
-                className='my-8 mx-2 sm:mx-6 md:mx-12 py-10 lg:py-20 bg-secondary flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-28 rounded-xl'
+                className={className}
             >
                 <div className='flex flex-col items-center gap-2 hover:translate-y-[-1.8rem] transition-all duration-300'>
                     <h3 className='happy-customers-volume-traded text-4xl xs:text-5xl'>{currencySymbol}{formatNumberToAbbreviation(volumeTraded)}</h3>
