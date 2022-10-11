@@ -11,3 +11,13 @@
     transform: translateY(150px);
     opacity: 1;
 }
+
+.pulse-on-hover:hover {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em rgba(0, 0, 0, 0);
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--secondary);
+    }
+}

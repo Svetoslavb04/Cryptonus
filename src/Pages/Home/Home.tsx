@@ -26,6 +26,11 @@ const Home: React.FC = () => {
         </div>
         <div className="start-trading-wrapper">
           <button className='start-trading-button bg-secondary py-3 px-8 rounded-full text-black xl:text-xl'>Start trading</button>
+          <button
+            className='start-trading-button pulse-on-hover bg-secondary py-3 px-8 rounded-full text-black xl:text-xl'
+          >
+            Start trading
+          </button>
         </div>
         <div className="image-wrapper px-20 pt-16 w-full flex justify-center">
           <img src="assets/images/cryptocurrency2.png" alt="" className='w-full xl:w-[60%]' />
