@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import "./Header.css"
-import { Sun, Menu, Moon } from 'react-feather';
+
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 import { themes } from '../../../constants/themes';
 
 type Props = {
@@ -49,15 +54,14 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
       <div className="logo font-bold h-full flex items-center grow-[2] shrink basis-0 select-none">
         <h1 className="text-3xl xl:text-4xl pl-7 pb-[3px] font-['Orbitron'] font-thin">Cryptonus</h1>
       </div>
-      <ul className="nav text-xl gap-7 h-full lg:flex hidden grow shrink justify-center select-none">
+      <ul className="nav text-xl gap-7 h-full xl:flex hidden grow shrink justify-center select-none">
         <li className='font-semibold border-b-2 border-transparent hover:border-b-2 hover:border-secondary h-full flex items-center pt-1'>Homepage</li>
         <li className='font-semibold border-b-2 border-transparent hover:border-b-2 hover:border-secondary h-full flex items-center pt-1'>Markets</li>
         <li className='font-semibold border-b-2 border-transparent hover:border-b-2 hover:border-secondary h-full flex items-center pt-1'>Buy Crypto</li>
         <li className='font-semibold border-b-2 border-transparent hover:border-b-2 hover:border-secondary h-full flex items-center pt-1'>Sell Crypto</li>
-        <li className='font-semibold border-b-2 border-transparent hover:border-b-2 hover:border-secondary h-full flex items-center pt-1'>Blog</li>
+        <li className='font-semibold border-b-2 border-transparent hover:border-b-2 hover:border-secondary h-full flex items-center pt-1'>Send Crypto</li>
       </ul>
-      <ul
-        className={`nav-mobile flex text-xl lg:hidden flex-col ${!isMobileMenuShown ? 'scale-1-0' : 'scale-1-1'} 
+      <ul className={`nav-mobile flex text-xl xl:hidden flex-col ${!isMobileMenuShown ? 'scale-1-0' : 'scale-1-1'} 
           absolute top-full w-full bg-primary dark:bg-primaryDark-dark origin-top transition-all duration-300 
           px-8 py-3 border-b border-onPrimary/25 dark:border-onPrimaryDark/25`}
       >
@@ -80,7 +84,7 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
         <li
           className='font-semibold h-full flex items-center hover:bg-primaryDark-light/50 
           transition-colors duration-300 rounded-sm p-2'
-        > <span className='pl-2'>Blog</span></li>
+        > <span className='pl-2'>Send Crypto</span></li>
       </ul>
       <ul className='flex text-xl gap-3 h-full justify-end items-center grow-[2] shrink basis-0 select-none'>
         <li
@@ -89,8 +93,8 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
         >
           {
             theme === themes.dark
-              ? <Sun size={24} className='hover:text-yellow-300' data-testid="sun-svg"/>
-              : <Moon size={24} className='hover:text-secondary' data-testid="moon-svg" />
+              ? <LightModeOutlinedIcon fontSize='large' className='p-[4px] pr-0 hover:text-yellow-300' data-testid="sun-svg" />
+              : <DarkModeOutlinedIcon fontSize='large' className='p-[4px] pr-0 hover:text-secondary' data-testid="moon-svg" />
           }
         </li>
         <li
@@ -100,12 +104,18 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
             ${isMobileMenuShown ? 'text-secondary' : ''}`
           }
         >
-          <Menu data-testid="menu-svg" />
+          <MenuRoundedIcon fontSize='large' data-testid="menu-svg" />
         </li>
-        <li className='pr-4'>
+        <li>
           <button className='px-2 border-2 border-onPrimary dark:border-onPrimaryDark hover:border-secondary dark:hover:border-secondary rounded-xl hover:border-2 hover:text-secondary'>
             Wallet
           </button>
+          <button className='rounded-xl hover:text-secondary'>
+            Login
+          </button>
+        </li>
+        <li className="pr-4">
+          <AccountCircleIcon fontSize='large'/>
         </li>
       </ul>
     </div>
