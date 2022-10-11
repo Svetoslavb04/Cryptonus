@@ -6,19 +6,20 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  important: '#root',
   theme: {
     screens: {
       'xs': '380px',
       ...defaultTheme.screens,
-      'max-xs': {'max': '380px'},
-      'max-sm': {'max': '640px'},
-      'max-md': {'max': '768px'},
-      'max-lg': {'max': '1024px'},
-      'max-xl': {'max': '1280px'},
-      'max-2xl': {'max': '1536px'},
-      'max-3xl': {'max': '1760px'},
-      'max-4xl': {'max': '1920px'},
-      'max-5xl': {'max': '2100px'},
+      'max-xs': { 'max': '380px' },
+      'max-sm': { 'max': '640px' },
+      'max-md': { 'max': '768px' },
+      'max-lg': { 'max': '1024px' },
+      'max-xl': { 'max': '1280px' },
+      'max-2xl': { 'max': '1536px' },
+      'max-3xl': { 'max': '1760px' },
+      'max-4xl': { 'max': '1920px' },
+      'max-5xl': { 'max': '2100px' },
     },
     extend: {
       transitionProperty: {

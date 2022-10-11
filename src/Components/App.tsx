@@ -1,8 +1,12 @@
-import { useState } from 'react';
 import './App.css';
+import { useState } from 'react';
+
+import { BrowserRouter } from 'react-router-dom';
+
+import { ConfigureMUI } from './Core/ConfigureMUI/ConfigureMUI';
+
 import { themes } from '../constants/themes';
 import Content from './Core/Content/Content';
-import { BrowserRouter } from 'react-router-dom';
 
 const App: React.FC = () => {
 
@@ -12,7 +16,9 @@ const App: React.FC = () => {
     <>
       <div id='cryptonus' className={`cryptonus overflow-hidden relative ${theme}`}>
         <BrowserRouter>
-          <Content theme={theme} setTheme={setTheme} />
+          <ConfigureMUI>
+            <Content theme={theme} setTheme={setTheme} />
+          </ConfigureMUI>
         </BrowserRouter>
       </div>
     </>
