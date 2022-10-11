@@ -7,6 +7,7 @@ import CurrenciesSection from '../../Components/CurrenciesSection/CurrenciesSect
 
 import WhatIsCryptonus from './WhatIsCryptonus/WhatIsCryptonus';
 import HappyCustomers from './HappyCustomers/HappyCustomers';
+import SignUpBonus from './SignUpBonus/SignUpBonus';
 
 const Home: React.FC = () => {
 
@@ -25,15 +26,28 @@ const Home: React.FC = () => {
           </h2>
         </div>
         <div className="start-trading-wrapper">
-          <button className='start-trading-button bg-secondary py-3 px-8 rounded-full text-black xl:text-xl'>Start trading</button>
+          <button
+            className='start-trading-button pulse-on-hover bg-secondary py-3 px-8 rounded-full text-black xl:text-xl'
+          >
+            Start trading
+          </button>
         </div>
         <div className="image-wrapper px-20 pt-16 w-full flex justify-center">
           <img src="assets/images/cryptocurrency2.png" alt="" className='w-full xl:w-[60%]' />
         </div>
       </section>
       <CurrenciesSection />
-      <WhatIsCryptonus />
-      <HappyCustomers volumeTraded={342131231231} supportedCountries={100} users={412332} />
+      <WhatIsCryptonus className='my-8 md:py-4 xl:py-16 px-6 bg-primary-dark/10 dark:bg-primaryDark-dark rounded-xl' />
+      <HappyCustomers
+        volumeTraded={342131231231}
+        supportedCountries={100}
+        users={412332}
+        className='my-8 py-10 lg:py-20 bg-secondary flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-28 rounded-xl'
+      />
+      <SignUpBonus
+        bonus={10000}
+        className='my-8 py-12 px-8 xl:p-16 bg-primary-dark/10 dark:bg-primaryDark-dark flex-col rounded-xl'
+      />
     </div>
   )
 }

@@ -3,14 +3,18 @@ import { useScrollTransition } from '../../../hooks/useScrollTransition';
 
 import { ChevronRight } from 'react-feather';
 
-const WhatIsCryptonus: FC = () => {
+type Props = {
+    className?: string
+};
+
+const WhatIsCryptonus: FC<Props> = ({ className }) => {
 
     const whatIsCryptonusRef = useRef<HTMLDivElement>(null);
 
     useScrollTransition(whatIsCryptonusRef, 80);
 
     return (
-        <section id='what-is-cryptonus' className='my-8 mx-2 sm:mx-6 md:mx-12 bg-primary-dark/10 dark:bg-primaryDark-dark rounded-xl md:py-4 xl:py-16 px-6'>
+        <section id='what-is-cryptonus' className={className}>
             <div className='flex gap-16 flex-col xl:flex-row'>
                 <div className='basis-2/5'>
                     <img src="assets/images/crypto-home-globe.png" alt="" className='m-auto w-[70%] xl:w-fit xl:max-h-[650px]' />
