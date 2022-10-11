@@ -15,7 +15,7 @@ const CurrenciesSection: FC<Props> = ({ className }) => {
     return (
         <section ref={currenciesSection} className={`pt-20 relative on-scroll-transition ${className}`}>
             <div
-                className='sm:px-14 md:px-20 lg:px-20 py-12 lg:h-96 bg-secondary rounded-[2rem] lg:rounded-full 
+                className='sm:px-3 md:px-20 lg:px-20 py-12 lg:h-96 bg-secondary rounded-[2rem] lg:rounded-full 
           flex items-center gap-6 justify-center flex-col lg:flex-row'
             >
                 <CryptoCard
