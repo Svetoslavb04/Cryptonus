@@ -110,9 +110,12 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
           <button className='px-2 border-2 border-onPrimary dark:border-onPrimaryDark hover:border-secondary dark:hover:border-secondary rounded-xl hover:border-2 hover:text-secondary'>
             Wallet
           </button>
-          <button className='px-2 rounded-xl hover:text-secondary'>
+          <button className='rounded-xl hover:text-secondary'>
             Login
           </button>
+        </li>
+        <li className="pr-4">
+          <AccountCircleIcon fontSize='large'/>
         </li>
       </ul>
     </div>
