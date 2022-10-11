@@ -39,17 +39,17 @@ const HappyCustomers: FC<Props> =
                 id='happy-customers-section'
                 className={className}
             >
-                <div className='flex flex-col items-center gap-2 hover:translate-y-[-1.8rem] transition-all duration-300'>
+                <div className='flex flex-col items-center gap-2 hover:translate-y-[-1.8rem] transition-all duration-300 cursor-pointer'>
                     <h3 className='happy-customers-volume-traded text-4xl xs:text-5xl'>{currencySymbol}{formatNumberToAbbreviation(volumeTraded)}</h3>
                     <p className='text-xl xs:text-2xl'>Volume Traded</p>
                 </div>
-                <div className='flex flex-col items-center gap-2 hover:translate-y-[-1.8rem] transition-all duration-300'>
+                <div className='flex flex-col items-center gap-2 hover:translate-y-[-1.8rem] transition-all duration-300 cursor-pointer'>
                     <h3 className='happy-customers-supported-countries text-4xl xs:text-5xl'>
                         {formatNumberToAbbreviation(supportedCountries)}{formatNumberToAbbreviation(supportedCountries) > 0 ? '+' : ''}
                     </h3>
                     <p className='text-xl xs:text-2xl'>Supported Countries</p>
                 </div>
-                <div className='flex flex-col items-center gap-2 hover:translate-y-[-1.8rem] transition-all duration-300'>
+                <div className='flex flex-col items-center gap-2 hover:translate-y-[-1.8rem] transition-all duration-300 cursor-pointer'>
                     <h3 className='happy-customers-users text-4xl xs:text-5xl'>{formatNumberToAbbreviation(users)}{formatNumberToAbbreviation(users) > 0 ? '+' : ''}</h3>
                     <p className='text-xl xs:text-2xl'>Verified Users</p>
                 </div>
