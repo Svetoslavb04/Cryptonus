@@ -1,7 +1,7 @@
 import { FC, useRef } from 'react'
 import { useScrollTransition } from '../../../hooks/useScrollTransition';
 
-import { ChevronRight } from 'react-feather';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 type Props = {
     className?: string
@@ -30,7 +30,9 @@ const WhatIsCryptonus: FC<Props> = ({ className }) => {
                             '24/7 Customer support'
                         ].map(text =>
                         (
-                            <div key={text} className='flex items-center xs:text-xl  sm:text-2xl md:text-3xl my-4'><ChevronRight size={40} />{text}</div>
+                            <div key={text} className='flex items-center xs:text-xl  sm:text-2xl md:text-3xl my-4'>
+                                <ChevronRightIcon fontSize='large' />{text}
+                            </div>
                         ))
                     }
                 </div>

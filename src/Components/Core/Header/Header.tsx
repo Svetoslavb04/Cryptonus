@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import "./Header.css"
-import { Sun, Menu, Moon } from 'react-feather';
+
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 import { themes } from '../../../constants/themes';
 
 type Props = {
@@ -88,8 +93,8 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
         >
           {
             theme === themes.dark
-              ? <Sun size={24} className='hover:text-yellow-300' data-testid="sun-svg" />
-              : <Moon size={24} className='hover:text-secondary' data-testid="moon-svg" />
+              ? <LightModeOutlinedIcon fontSize='large' className='p-[4px] pr-0 hover:text-yellow-300' data-testid="sun-svg" />
+              : <DarkModeOutlinedIcon fontSize='large' className='p-[4px] pr-0 hover:text-secondary' data-testid="moon-svg" />
           }
         </li>
         <li
@@ -99,9 +104,9 @@ const Header: React.FC<Props> = ({ theme, setTheme }) => {
             ${isMobileMenuShown ? 'text-secondary' : ''}`
           }
         >
-          <Menu data-testid="menu-svg" />
+          <MenuRoundedIcon fontSize='large' data-testid="menu-svg" />
         </li>
-        <li className='pr-4'>
+        <li>
           <button className='px-2 border-2 border-onPrimary dark:border-onPrimaryDark hover:border-secondary dark:hover:border-secondary rounded-xl hover:border-2 hover:text-secondary'>
             Wallet
           </button>
